@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 3: B.Sc. (H) CS Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1, h2, h3 {
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            min-height: 50px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        /* Color coding for class types */
+        .aec { background-color: lightGreen; } 
+        .vac { background-color: gold;} 
+        .ge  { background-color: lightpink; } 
+        .sec { background-color: lightBlue; } 
+        .lab { background-color: lightgrey } 
+        .lunch {
+            font-weight: bold;
+            font-size: 16px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>RAMANUJAN COLLEGE</h2>
+        <h3>DEPARTMENT OF COMPUTER SCIENCE - SEMESTER I (2025-26)</h3>
+        <h3>B.SC. (H) COMPUTER SCIENCE, SEM I</h3>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Periods</th>
+                <th>I</th>
+                <th>II</th>
+                <th>III</th>
+                <th>IV</th>
+                <th>V</th>
+                <th>VI</th>
+                <th>VII</th>
+                <th>VIII</th>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <th>8:30-9:30</th>
+                <th>9:30-10:30</th>
+                <th>10:30-11:30</th>
+                <th>11:30-12:30</th>
+                <th>1:00-2:00</th>
+                <th>2:00-3:00</th>
+                <th>3:00-4:00</th>
+                <th>4:00-5:00</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>MON</th>
+                <td colspan="2">Object Oriented Program.<br>P30</td>
+                <td></td>
+                <td></td>
+                <td colspan="2">Mathematics for Computing<br>P29</td>
+                <td></td>
+                <td class="ge">GE</td>
+            </tr>
+            <tr>
+                <th>TUE</th>
+                <td>Computer System Arch.<br>P30</td>
+                <td colspan="2" class="aec">AEC</td>
+                <td></td>
+                <td>Mathematics for Computing<br>P29</td>
+                <td colspan="2" class="vac">VAC</td>
+                <td class="sec">SEC</td>
+            </tr>
+            <tr>
+                <th>WED</th>
+                <td colspan="2" class="lab">OOP Lab<br>Porta Lab 3</td>
+                <td></td>
+                <td></td>
+                <td colspan="2" class="vac">VAC</td>
+                <td colspan="2" class="ge">GE</td>
+            </tr>
+            <tr>
+                <th>THUR</th>
+                <td>Object Oriented Program.<br>P29</td>
+                <td class="aec">AEC</td>
+                <td colspan="2" class="lab">CSA Lab<br>Porta Lab 3</td>
+                <td></td>
+                <td></td>
+                <td colspan="2" class="ge">GE</td>
+            </tr>
+            <tr>
+                <th>FRI</th>
+                <td colspan="2">Computer System Arch.<br>P30</td>
+                <td colspan="2" class="lab">MFC Lab<br>Porta Lab 3</td>
+                <td></td>
+                <td colspan="2" class="sec">SEC</td>
+                <td class="aec">AEC</td>
+            </tr>
+            <tr>
+                <th>SAT</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
