@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: #00ffff;
+      padding: 25px;
+      border: 2px solid #000;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      border: 1px solid #000;
+      padding: 8px;
+      background: #e0f7fa;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 8px;
+      vertical-align: middle;
+    }
+
+    td:first-child {
+      font-weight: bold;
+      text-align: right;
+      width: 35%;
+      padding-right: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 7px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .options-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    input[type="file"] {
+      width: 100%;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      background-color: #f0f0f0;
+      border: 1px solid #000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      margin: 0 10px;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #dcdcdc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h1>Student Registration Form</h1>
+
+    <form action="#" method="POST">
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" name="name" placeholder="Enter full name" required></td>
+        </tr>
+
+        <tr>
+          <td>Father's Name:</td>
+          <td><input type="text" name="father_name" required></td>
+        </tr>
+
+        <tr>
+          <td>Mother's Name:</td>
+          <td><input type="text" name="mother_name" required></td>
+        </tr>
+
+        <tr>
+          <td>Phone Number:</td>
+          <td><input type="tel" name="phone" placeholder="017xxxxxxxx" required></td>
+        </tr>
+
+        <tr>
+          <td>Email:</td>
+          <td><input type="email" name="email" placeholder="sample@example.com" required></td>
+        </tr>
+
+        <tr>
+          <td>Gender:</td>
+          <td>
+            <div class="options-group">
+              <label><input type="radio" name="gender" value="Male"> Male</label>
+              <label><input type="radio" name="gender" value="Female"> Female</label>
+              <label><input type="radio" name="gender" value="Other"> Other</label>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Date of Birth:</td>
+          <td><input type="date" name="dob" required></td>
+        </tr>
+
+        <tr>
+          <td>Address:</td>
+          <td><input type="text" name="address" placeholder="Street - House - Road" required></td>
+        </tr>
+
+        <tr>
+          <td>Blood Group:</td>
+          <td>
+            <select name="blood_group" required>
+              <option value="" disabled selected>Select</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>O+</option>
+              <option>O-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Department:</td>
+          <td>
+            <div class="options-group">
+              <label><input type="checkbox" name="department" value="CSE"> CSE</label>
+              <label><input type="checkbox" name="department" value="EEE"> EEE</label>
+              <label><input type="checkbox" name="department" value="BBA"> BBA</label>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Course:</td>
+          <td>
+            <div class="options-group">
+              <label><input type="checkbox" name="course" value="C"> C</label>
+              <label><input type="checkbox" name="course" value="C++"> C++</label>
+              <label><input type="checkbox" name="course" value="Java"> Java</label>
+              <label><input type="checkbox" name="course" value="AI"> AI</label>
+              <label><input type="checkbox" name="course" value="ML"> Machine Learning</label>
+              <label><input type="checkbox" name="course" value="Robotics"> Robotics</label>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Photo:</td>
+          <td><input type="file" name="photo"></td>
+        </tr>
+      </table>
+
+      <div class="button-container">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

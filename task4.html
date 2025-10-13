@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramanujan College Website</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    #website-layout {
+      display: flex;
+      flex-direction: column;
+      height: 95vh;
+      border: 2px solid gray;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    #bottom-section {
+      display: flex;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+    #left-frame {
+      width: 25%;
+      min-width: 200px;
+      border-right: 2px solid #d1d5db;
+      overflow-y: auto;
+    }
+    #right-frame {
+      width: 75%;
+      overflow-y: auto;
+    }
+    #left-frame a {
+      display: block;
+      padding: 8px 0;
+      transition: all 0.2s ease-in-out;
+    }
+    #left-frame a:hover,
+    #left-frame a.active {
+      color: #2563eb;
+      transform: translateX(5px);
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-200 p-4 sm:p-6 flex items-center justify-center min-h-screen">
+  <div id="website-layout" class="w-full max-w-7xl mx-auto bg-white">
+    <header class="bg-gray-100 flex flex-col items-center justify-center p-4 border-b-2 border-gray-300">
+      <img src="rama logo.jpg" alt="Ramanujan College Logo" class="h-16 sm:h-20 w-auto object-contain mb-3" />
+      <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 text-center">Ramanujan College</h1>
+    </header>
+
+    <div id="bottom-section">
+      <nav id="left-frame" class="bg-gray-50 p-6">
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Menu</h3>
+        <ul class="space-y-2">
+          <li><a href="#" onclick="showContent('faculty', this)" class="text-lg text-gray-700 font-medium">Faculty</a></li>
+          <li><a href="#" onclick="showContent('courses', this)" class="text-lg text-gray-700 font-medium">Courses</a></li>
+          <li><a href="#" onclick="showContent('activities', this)" class="text-lg text-gray-700 font-medium">Student Activities</a></li>
+        </ul>
+      </nav>
+
+      <main id="right-frame" class="p-8"></main>
+    </div>
+  </div>
+
+  <script>
+    function showContent(page, clickedLink) {
+      const rightFrame = document.getElementById('right-frame');
+      let content = '';
+
+      switch (page) {
+        case 'faculty':
+          content = `
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Faculty Information</h1>
+            <p class="text-gray-700 leading-relaxed">
+              This page contains information about the college faculty members. You can list the names,
+              departments, and qualifications of the professors here.
+            </p>`;
+          break;
+        case 'courses':
+          content = `
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Courses Offered</h1>
+            <p class="text-gray-700 leading-relaxed">
+              This page lists all the courses available at the college. For example: B.Com (Hons),
+              B.A. (Hons) Economics, B.Sc (Hons) Computer Science, etc.
+            </p>`;
+          break;
+        case 'activities':
+          content = `
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Student Activities</h1>
+            <p class="text-gray-700 leading-relaxed">
+              Explore the various student clubs, events, and activities. This section can include details
+              about the cultural fest, sports meet, and other societies.
+            </p>`;
+          break;
+        default:
+          content = `
+            <div class="text-center mt-10">
+              <h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome to Ramanujan College</h1>
+              <p class="text-lg text-gray-600">
+                Please select an option from the menu on the left to view the details.
+              </p>
+            </div>`;
+      }
+
+      rightFrame.innerHTML = content;
+
+      const allLinks = document.querySelectorAll('#left-frame a');
+      allLinks.forEach(link => link.classList.remove('active'));
+      if (clickedLink) clickedLink.classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => showContent('welcome', null));
+  </script>
+</body>
+</html>
+
