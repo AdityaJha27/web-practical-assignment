@@ -1,0 +1,27 @@
+<html>
+<head>
+ <title>Factorial Finder</title>
+</head>
+<body>
+ <h3>Find Factorial</h3>
+ <input type="number" id="num" placeholder="Enter a positive integer">
+ <button onclick="findFactorial()">Find Factorial</button>
+ <p id="result"></p>
+ <script>
+  function findFactorial() {
+   const n = parseInt(document.getElementById('num').value);
+   
+   if (isNaN(n) || n < 0) {
+    document.getElementById('result').textContent = "Please enter a non-negative integer.";
+    return;
+   }
+   
+   let fact = 1;
+   for (let i = 1; i <= n; i++) {
+    fact *= i;
+   }
+   document.getElementById('result').textContent = `Factorial of ${n} is: ${fact}`;
+  }
+ </script>
+</body>
+</html>
